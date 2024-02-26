@@ -1,0 +1,96 @@
+# depslib dependency file v1.0
+1654922767 source:e:\c\suanfa\searchengine\main.cpp
+	<string>
+	<iostream>
+	<vector>
+	"Readcsv.h"
+	"Search.h"
+	"Word.h"
+
+1655293443 e:\c\suanfa\searchengine\readcsv.h
+	<ctime>
+
+1655336520 source:e:\c\suanfa\searchengine\readcsv.cpp
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+	"Readcsv.h"
+
+1655336520 source:e:\c\suanfa\searchengine\search.cpp
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+	"Readcsv.h"
+	"Search.h"
+	"Word.h"
+	"Index.h"
+	"Inquire.h"
+
+1654922791 e:\c\suanfa\searchengine\search.h
+
+1655336520 source:e:\c\suanfa\searchengine\word.cpp
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+	<string.h>
+	<ctype.h>
+	<utility>
+	<algorithm>
+	"Readcsv.h"
+	"Search.h"
+	"Word.h"
+
+1655305640 e:\c\suanfa\searchengine\word.h
+
+1655304790 source:e:\c\suanfa\searchengine\inquire.cpp
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+	"Readcsv.h"
+	"Search.h"
+	"windows.h "
+	"shellapi.h "
+
+1655306746 source:e:\c\suanfa\searchengine\index.cpp
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+	<string.h>
+	<ctype.h>
+	<utility>
+	<algorithm>
+	<iterator>
+	"Readcsv.h"
+	"Search.h"
+	"Word.h"
+	"Index.h"
+	"Sort.h"
+	<algorithm>
+
+1654915561 e:\c\suanfa\searchengine\index.h
+
+1655305632 e:\c\suanfa\searchengine\inquire.h
+
+1655305173 source:e:\c\suanfa\searchengine\sort.cpp
+	"Sort.h"
+	<string>
+	<iostream>
+	<vector>
+	"Readcsv.h"
+	"Search.h"
+	"Word.h"
+
+1655305173 e:\c\suanfa\searchengine\sort.h
+	"utility"
+	<vector>
+
