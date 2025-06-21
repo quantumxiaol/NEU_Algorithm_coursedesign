@@ -22,10 +22,10 @@ cout<<"********************Welcome to Search********************"<<endl;
 
 int state=-1;
 /*
-//¶ÁÈ¡ÍøÒ³ÎÄ¼ş
+//è¯»å–ç½‘é¡µæ–‡ä»¶
 //Readcsv();
 
-//¶ÁÈ¡k¸ö²éÑ¯´Ê
+//è¯»å–kä¸ªæŸ¥è¯¢è¯
 cout<<"*Please input several words to search,Separated by space*"<<endl;
 do{
 state=keyword_search(keywordlist);
@@ -341,7 +341,7 @@ vector<pair<int,vector<int>>> input4;
 if(0==num){
     readwordlist(input1);
     for(int i=0;i<input1.size();i++){
-    //      µ¥´Ê                  µ¥´Ê±àºÅ
+    //      å•è¯                  å•è¯ç¼–å·
     cout<<input1[i].first<<" "<<input1[i].second<<"\n";
     }
 }
@@ -349,7 +349,7 @@ if(0==num){
 if(1==num){
     readtempindex(input2);
     for(int i=0;i<input2.size();i++){
-    //      µ¥´Ê±àºÅ            ÍøÒ³±àºÅ
+    //      å•è¯ç¼–å·            ç½‘é¡µç¼–å·
     cout<<input2[i].first<<"\t"<<input2[i].second<<"\n";
     }
 }
@@ -357,7 +357,7 @@ if(1==num){
 if(2==num){
     readtempindexfrequency(input3);
     for(int i=0;i<input3.size();i++){
-    //      µ¥´Ê±àºÅ            ÍøÒ³±àºÅ                        ´ÊÆµ
+    //      å•è¯ç¼–å·            ç½‘é¡µç¼–å·                        è¯é¢‘
     cout<<input3[i].first<<"\t"<<input3[i].second.first<<"\t"<<input3[i].second.second<<"\n";
     }
 }
@@ -365,7 +365,7 @@ if(2==num){
 if(3==num){
     readindex(input4);
     for(int i=0;i<input4.size();i++){
-            //µ¥´Ê±àºÅ
+            //å•è¯ç¼–å·
     cout<<input4[i].first<<"\t";
     for(int j=0;j<input4[i].second.size();j++)
         cout<<input4[i].second[j]<<" ";
@@ -376,15 +376,15 @@ return 0;
 }
 
 
-//¶ÑÅÅĞòÄ£°å
-// µİ¹é·½Ê½µ÷ÕûÍêÈ«¶ş²æÊ÷µÄ¸ù½Úµã, Ê¹Æä·ûºÏ´ó¸ù¶ÑÌØĞÔ
-// startºÍendÃèÊöÁË¶ÑµãÔÚÊı×éviÖĞµÄÏÂ±ê
+//å †æ’åºæ¨¡æ¿
+// é€’å½’æ–¹å¼è°ƒæ•´å®Œå…¨äºŒå‰æ ‘çš„æ ¹èŠ‚ç‚¹, ä½¿å…¶ç¬¦åˆå¤§æ ¹å †ç‰¹æ€§
+// startå’Œendæè¿°äº†å †ç‚¹åœ¨æ•°ç»„viä¸­çš„ä¸‹æ ‡
 void maxHeapify(std::vector<int> &vi, int start, int end) {
-    // Çó³ö×óÓÒ×Ó½áµãÏÂ±ê
+    // æ±‚å‡ºå·¦å³å­ç»“ç‚¹ä¸‹æ ‡
     int left = 2 * start + 1;
     int right = left + 1;
 
-    // Çó³ö{vi[start], vi[left], vi[right]}ÈıÕßÖĞµÄ×î´óÖµÏÂ±ê
+    // æ±‚å‡º{vi[start], vi[left], vi[right]}ä¸‰è€…ä¸­çš„æœ€å¤§å€¼ä¸‹æ ‡
     int maxIndex = start;
     if (left <= end && vi[left] > vi[maxIndex]) {
         maxIndex = left;
@@ -393,21 +393,21 @@ void maxHeapify(std::vector<int> &vi, int start, int end) {
         maxIndex = right;
     }
 
-    // Èç¹û¸ù½áµã²»ÊÇ×î´óµÄ, ½»»»¸¸×Ó½áµãºóÔò¼ÌĞøµİ¹éµ÷ÕûÏÂÒ»²ã
+    // å¦‚æœæ ¹ç»“ç‚¹ä¸æ˜¯æœ€å¤§çš„, äº¤æ¢çˆ¶å­ç»“ç‚¹ååˆ™ç»§ç»­é€’å½’è°ƒæ•´ä¸‹ä¸€å±‚
     if (maxIndex != start) {
         std::swap(vi[maxIndex], vi[start]);
         maxHeapify(vi, maxIndex, end);
     }
 }
 
-// ¶ÑÅÅĞò
+// å †æ’åº
 void heapSort(std::vector<int> &vi) {
-    // ³õÊ¼»¯½¨¶Ñ: ´Ó×îºóÒ»¸öÒ¶×Ó½áµã¿ªÊ¼, ´ÓÓÒµ½×ó´ÓÏÂµ½ÉÏµ÷Õû¶ş²æÊ÷³É´ó¸ù¶Ñ
+    // åˆå§‹åŒ–å»ºå †: ä»æœ€åä¸€ä¸ªå¶å­ç»“ç‚¹å¼€å§‹, ä»å³åˆ°å·¦ä»ä¸‹åˆ°ä¸Šè°ƒæ•´äºŒå‰æ ‘æˆå¤§æ ¹å †
     for (int i = vi.size() / 2 - 1; i >= 0; --i) {
         maxHeapify(vi, i, vi.size() - 1);
     }
 
-    // ¶ÑÅÅĞò: ½»»»Ê×Î²ÔªËØºóµ÷Õû¸ù½ÚµãÊ¹Æä·ûºÏ´ó¸ù¶ÑÌØĞÔ
+    // å †æ’åº: äº¤æ¢é¦–å°¾å…ƒç´ åè°ƒæ•´æ ¹èŠ‚ç‚¹ä½¿å…¶ç¬¦åˆå¤§æ ¹å †ç‰¹æ€§
     for (int i = vi.size() - 1; i >= 1; --i) {
         std::swap(vi[0], vi[i]);
         maxHeapify(vi, 0, i - 1);
@@ -415,7 +415,7 @@ void heapSort(std::vector<int> &vi) {
 }
 
 int kkeyword(vector<string> &keyword){
-//¶ÁÈ¡k¸ö²éÑ¯´Ê
+//è¯»å–kä¸ªæŸ¥è¯¢è¯
 int state;
 cout<<"*Please input several words to search,Separated by space*"<<endl;
 do{
@@ -436,23 +436,23 @@ cout<<"********************Welcome to Search********************"<<endl;
 vector<string> keyword;
 vector<string> site;
 vector<string> title;
-//ËÑ¼¯
+//æœé›†
 cout<<"***********             Searching         **************"<<endl;
 
 //Readcsv();
 int htmln=HTMLNUM;
 
-//·ÖÎö
+//åˆ†æ
 cout<<"***********             Analyzing         **************"<<endl;
 
 //analyseHtml(htmln+1);
 
-//Ë÷Òı
+//ç´¢å¼•
 cout<<"***********         Processing Index      **************"<<endl;
 
 //indexProcressTest();
 
-//²éÑ¯
+//æŸ¥è¯¢
 cout<<"***********              Inquire          **************"<<endl;
 
 kkeyword(keyword);

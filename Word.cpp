@@ -22,7 +22,7 @@ struct TrieNode{
     TrieNode() {
         this->child = vector<TrieNode *>(67,nullptr);
         this->isEnd = false;
-        //²»´æÔÚµÄµ¥´ÊµÄid
+        //ä¸å­˜åœ¨çš„å•è¯çš„id
         wordid=-114514;
     }
 };
@@ -170,7 +170,7 @@ public:
         }
 
         /*
-        //Ä£ºıÆ¥Åä
+        //æ¨¡ç³ŠåŒ¹é…
         else if (ch == '*') {
             for (int i = 0; i < 26; i++) {
                 TrieNode * child = node->child[i];
@@ -197,7 +197,7 @@ public:
         }
     {
         /*
-        //Ä£ºıÆ¥Åä
+        //æ¨¡ç³ŠåŒ¹é…
         else if (ch == '*') {
             for (int i = 0; i < 26; i++) {
                 TrieNode * child = node->child[i];
@@ -215,8 +215,8 @@ private:
 };
 //WordDictionary WordList;
 
-//¶Ôµ¥¸öÍøÒ³µÄµ¥´ÊÍ³¼Æ´ÊÆµÓÃ
-//×ÖµäÊ÷µÄ½áµã
+//å¯¹å•ä¸ªç½‘é¡µçš„å•è¯ç»Ÿè®¡è¯é¢‘ç”¨
+//å­—å…¸æ ‘çš„ç»“ç‚¹
 struct trie {
     int n;
     bool isRecord;
@@ -245,7 +245,7 @@ public:
                 }
                 tmp = tmp->son[next];
             }
-            // µ½´ïµ×²¿ºó, Ò¶×Ó½áµã++,ËµÃ÷µ¥´Ê³öÏÖÒ»´Î
+            // åˆ°è¾¾åº•éƒ¨å, å¶å­ç»“ç‚¹++,è¯´æ˜å•è¯å‡ºç°ä¸€æ¬¡
             ++(tmp->n);
         }
     }
@@ -327,7 +327,7 @@ while(doc_id<3)
     {
 
         for(int i=0;i<str.size();i++)
-            while(str[i]==','||str[i]=='\t'||str[i]=='£¬'||str[i]==' '||str[i]=='('||str[i]==')'||
+            while(str[i]==','||str[i]=='\t'||str[i]=='ï¼Œ'||str[i]==' '||str[i]=='('||str[i]==')'||
                   (str[i]=='-'&&!isletter(str[i-1])&&!isletter(str[i+1]))
                   ||str[i]=='\''||str[i]=='\"'||(str[i]=='.'&&str!="a.m."&&str!="p.m.")
                   ||str[i]=='_'||str[i]=='?'||str[i]=='!'||str[i]=='&'||str[i]=='/'||str[i]==';')
@@ -359,10 +359,10 @@ int readsitestory_TP(long long int id,vector<string> &input){
 
 pair<int,int > p;
 
-//´ÊÆµ£¨Î´ÊµÏÖ£©
+//è¯é¢‘ï¼ˆæœªå®ç°ï¼‰
 int frequency;
 
-//ÍøÒ³ÎÄ¼ş¶ÁÈ¡
+//ç½‘é¡µæ–‡ä»¶è¯»å–
 if(id<0)return -1;
 string filenamenum="";
 filenamenum=to_string(static_cast<long long>(id));
@@ -411,9 +411,9 @@ return 0;
 int tempindex(long long int id,vector<string> htmlword,vector<string>&wordlist,WordDictionary &WD,vector<pair<int,int>>&index1){
     //,vector<pair<int,int>>index1,vector<pair<int,pair<int,int>>>index2
 
-    //µ¥´Êid£¬<ÍøÒ³id£¬´ÊÆµ>
+    //å•è¯idï¼Œ<ç½‘é¡µidï¼Œè¯é¢‘>
     pair<int,pair<int,int>> triplepair;
-    //<µ¥´Êid£¬ÍøÒ³id>
+    //<å•è¯idï¼Œç½‘é¡µid>
     pair<int,int> wordpair;
     int wdid;
     WordsFrequency WDFre(htmlword);
@@ -422,7 +422,7 @@ int tempindex(long long int id,vector<string> htmlword,vector<string>&wordlist,W
     for(i=0;i<htmlword.size();i++){
     //if(is_Dig(htmlword[i][0])||('$'==htmlword[i][0]))continue;
 
-    //ÒÑ¾­ÔÚÈ«ÆªÖĞ³öÏÖ¹ıÁ¦
+    //å·²ç»åœ¨å…¨ç¯‡ä¸­å‡ºç°è¿‡åŠ›
     if(WD.search(htmlword[i])){
         //frequency++;
         //cout<<"word id:"<<htmlword[i]<<endl;
@@ -440,10 +440,10 @@ int tempindex(long long int id,vector<string> htmlword,vector<string>&wordlist,W
                 //continue;
     }
         else{
-        //±ê¼Çµ¥´Ê±»·ÃÎÊ
+        //æ ‡è®°å•è¯è¢«è®¿é—®
         WDFre.get(htmlword[i]);
         wdid=WD.searchwordid(htmlword[i]);
-        //µ÷ÊÔÊä³ö
+        //è°ƒè¯•è¾“å‡º
         //cout<<"word id:"<<htmlword[i]<<"\t"<<wdid<<"\t"<<id<<endl;
         //int fre=WDFre.get(htmlword[i]);
         index1.push_back(make_pair(wdid,id));
@@ -472,9 +472,9 @@ int tempindex(long long int id,vector<string> htmlword,vector<string>&wordlist,W
 int tempindexwithfrequency(long long int id,vector<string> htmlword,WordDictionary &WD,vector<pair<int,pair<int,int>>>&index1){
     //,vector<pair<int,int>>index1,vector<pair<int,pair<int,int>>>index2
 
-    //µ¥´Êid£¬<ÍøÒ³id£¬´ÊÆµ>
+    //å•è¯idï¼Œ<ç½‘é¡µidï¼Œè¯é¢‘>
     pair<int,pair<int,int>> triplepair;
-    //<µ¥´Êid£¬ÍøÒ³id>
+    //<å•è¯idï¼Œç½‘é¡µid>
     pair<int,int> wordpair;
     int i=0;
     int wdid;
@@ -517,27 +517,27 @@ int analyseHtml(int num=HTMLNUM){
     }
     analysefinish=clock();
     analyseTime=(double)(analysefinish-analysestart);
-    cout<<"¼ÆËãÁÙÊ±Ë÷ÒıÎÄ¼şµÄÊ±¼äÎª"<<analyseTime<<"ms\n";
-    //Ğ´ÈëÁÙÊ±Ë÷Òı
+    cout<<"è®¡ç®—ä¸´æ—¶ç´¢å¼•æ–‡ä»¶çš„æ—¶é—´ä¸º"<<analyseTime<<"ms\n";
+    //å†™å…¥ä¸´æ—¶ç´¢å¼•
     a1=clock();
     inputtempindex(index);
     a2=clock();
     Ta=(double)(a2-a1);
-    cout<<"Ğ´ÈëÁÙÊ±Ë÷ÒıÎÄ¼şµÄÊ±¼äÎª"<<Ta<<"ms\n";
+    cout<<"å†™å…¥ä¸´æ—¶ç´¢å¼•æ–‡ä»¶çš„æ—¶é—´ä¸º"<<Ta<<"ms\n";
 
-    //Ğ´Èë´ø´ÊÆµµÄË÷Òı
+    //å†™å…¥å¸¦è¯é¢‘çš„ç´¢å¼•
     b1=clock();
     inputtempindexfrequency(indexfre);
     b2=clock();
     Tb=(double)(b2-b1);
-    cout<<"Ğ´Èë´ø´ÊÆµÁÙÊ±Ë÷ÒıÎÄ¼şµÄÊ±¼äÎª"<<Tb<<"ms\n";
+    cout<<"å†™å…¥å¸¦è¯é¢‘ä¸´æ—¶ç´¢å¼•æ–‡ä»¶çš„æ—¶é—´ä¸º"<<Tb<<"ms\n";
 
-    //Ğ´Èëµ¥´Ê±àÂë±í
+    //å†™å…¥å•è¯ç¼–ç è¡¨
     c1=clock();
     inputwordlist(WORDLIST);
     c2=clock();
     Tc=(double)(c2-c1);
-    cout<<"Ğ´Èëµ¥´Ê±àÂë±íµÄÊ±¼äÎª"<<Tc<<"ms\n";
+    cout<<"å†™å…¥å•è¯ç¼–ç è¡¨çš„æ—¶é—´ä¸º"<<Tc<<"ms\n";
     //cout<<"WORDLIST :"<<WORDLIST.size()<<endl;
     //PrintVector(WORDLIST,"WORDLIST");
     //cout<<"WORDLIST :"<<WORDLIST.size()<<endl;

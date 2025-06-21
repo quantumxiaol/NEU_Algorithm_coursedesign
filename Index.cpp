@@ -13,22 +13,22 @@
 #include "Word.h"
 #include "Index.h"
 #include "Sort.h"
-//½öÓÃÓÚÉú³É²âÊÔÑùÀıÈÃÍõâùÕıÏÈÊ¹ÓÃ£¬Êµ¼ÊÊµÏÖÓÉ¼¾êÊÊµÏÖ
+//ä»…ç”¨äºç”Ÿæˆæµ‹è¯•æ ·ä¾‹è®©ç‹æ€¡æ­£å…ˆä½¿ç”¨ï¼Œå®é™…å®ç°ç”±å­£æ™”å®ç°
 #include <algorithm>
 
 
 using namespace std;
 
 bool cmp0(const pair<int, int>& a, const pair<int, int>& b){
-	// ÒÔpair¶ÔµÄµÚ1¸öÊıµÄ´óĞ¡´Ó´óÍùĞ¡ÅÅĞò
+	// ä»¥pairå¯¹çš„ç¬¬1ä¸ªæ•°çš„å¤§å°ä»å¤§å¾€å°æ’åº
 	return a.first < b.first;
 }
 bool cmp1(const pair<int, int>& a, const pair<int, int>& b){
-	// ÒÔpair¶ÔµÄµÚ2¸öÊıµÄ´óĞ¡´Ó´óÍùĞ¡ÅÅĞò
+	// ä»¥pairå¯¹çš„ç¬¬2ä¸ªæ•°çš„å¤§å°ä»å¤§å¾€å°æ’åº
 	return a.second < b.second;
 }
 bool cmp2(const pair<int,pair<int,int>>& a, const pair<int,pair<int,int>>& b){
-	// ÒÔpair¶ÔµÄµÚ1¸öÊıµÄ´óĞ¡´Ó´óÍùĞ¡ÅÅĞò
+	// ä»¥pairå¯¹çš„ç¬¬1ä¸ªæ•°çš„å¤§å°ä»å¤§å¾€å°æ’åº
 	return a.first < b.first;
 }
 
@@ -42,14 +42,14 @@ cout<<"index called\n";
 vector<pair<string,int>>wordlist;
 readwordlist(wordlist);
 
-//*********µ¥´Êid**ÍøÒ³id
+//*********å•è¯id**ç½‘é¡µid
 vector<pair<int,int>> temindex;
-//*********µ¥´Êid********ÍøÒ³id**´ÊÆµ
+//*********å•è¯id********ç½‘é¡µid**è¯é¢‘
 vector<pair<int,pair<int,int>>> temindexfre;
 
-//*********µ¥´Êid**ÍøÒ³id
+//*********å•è¯id**ç½‘é¡µid
 vector<pair<int,vector<int>>> indextest;
-//*********µ¥´Êid********ÍøÒ³id**´ÊÆµ
+//*********å•è¯id********ç½‘é¡µid**è¯é¢‘
 vector<pair<int,vector<pair<int,int>>>> indexfretest;
 
 readtempindex(temindex);
@@ -141,9 +141,9 @@ cout<<"input called\n";
 
 indexTime=(double)(indexfinish-indexstart);
 indexfreTime=(double)(indexfrefinish-indexfrestart);
-cout<<"ÅÅĞòË÷ÒıÎÄ¼şµÄÊ±¼äÎª"<<sortTime<<"ms\n";
-cout<<"Ğ´Èëµ¹ÅÅË÷ÒıÎÄ¼şµÄÊ±¼äÎª"<<indexTime<<"ms\n";
-cout<<"Ğ´Èë(ÆµÂÊ)µ¹ÅÅË÷ÒıÎÄ¼şµÄÊ±¼äÎª"<<indexfreTime<<"ms\n";
+cout<<"æ’åºç´¢å¼•æ–‡ä»¶çš„æ—¶é—´ä¸º"<<sortTime<<"ms\n";
+cout<<"å†™å…¥å€’æ’ç´¢å¼•æ–‡ä»¶çš„æ—¶é—´ä¸º"<<indexTime<<"ms\n";
+cout<<"å†™å…¥(é¢‘ç‡)å€’æ’ç´¢å¼•æ–‡ä»¶çš„æ—¶é—´ä¸º"<<indexfreTime<<"ms\n";
 return 0;
 }
 
@@ -152,14 +152,14 @@ cout<<"index called\n";
 vector<pair<string,int>>wordlist;
 readwordlist(wordlist);
 
-//*********µ¥´Êid**ÍøÒ³id
+//*********å•è¯id**ç½‘é¡µid
 vector<pair<int,int>> temindex;
-//*********µ¥´Êid********ÍøÒ³id**´ÊÆµ
+//*********å•è¯id********ç½‘é¡µid**è¯é¢‘
 vector<pair<int,pair<int,int>>> temindexfre;
 
-//*********µ¥´Êid**ÍøÒ³id
+//*********å•è¯id**ç½‘é¡µid
 vector<pair<int,vector<int>>> indextest;
-//*********µ¥´Êid********ÍøÒ³id**´ÊÆµ
+//*********å•è¯id********ç½‘é¡µid**è¯é¢‘
 vector<pair<int,vector<pair<int,int>>>> indexfretest;
 
 readtempindex(temindex);

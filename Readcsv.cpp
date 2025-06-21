@@ -14,12 +14,12 @@ vector<string>storyArray;
 int HTMLNUM=0;
 
 /*
-¶ÁÈ¡"news.csv"£¬µÃµ½ÍøÖ·¡¢±êÌâ¡¢ÎÄÕÂÄÚÈİ4717Æª£¬
-ÆäÖĞÍøÖ·±êÌâ·Ö±ğÖÃÓÚsiteArrayºÍtitleArrayÈİÆ÷Ö®ÖĞ
-ÎÄÕÂÄÚÈİ·ÅÖÃÓÚ¹¤³ÌÎÄ¼şÏÂÎª"1"µÄ×ÓÎÄ¼ş¼Ğ
-ÌØ±ğËµÃ÷£¬ÎÄÕÂÄÚÈİ´Ó1¼ÆÊı£¬ÍøÖ·±êÌâ´Ó0¼ÆÊı
+è¯»å–"news.csv"ï¼Œå¾—åˆ°ç½‘å€ã€æ ‡é¢˜ã€æ–‡ç« å†…å®¹4717ç¯‡ï¼Œ
+å…¶ä¸­ç½‘å€æ ‡é¢˜åˆ†åˆ«ç½®äºsiteArrayå’ŒtitleArrayå®¹å™¨ä¹‹ä¸­
+æ–‡ç« å†…å®¹æ”¾ç½®äºå·¥ç¨‹æ–‡ä»¶ä¸‹ä¸º"1"çš„å­æ–‡ä»¶å¤¹
+ç‰¹åˆ«è¯´æ˜ï¼Œæ–‡ç« å†…å®¹ä»1è®¡æ•°ï¼Œç½‘å€æ ‡é¢˜ä»0è®¡æ•°
 */
-void Readcsv()//¶ÁÈ¡"news.csv"
+void Readcsv()//è¯»å–"news.csv"
 {
     clock_t Readcsvstart, Readcsvfinish;
     double ReadcsvTime;
@@ -27,7 +27,7 @@ void Readcsv()//¶ÁÈ¡"news.csv"
     int countnum=0;
     int flag=0;
     //0=site,1=title,2=story
-	// ¶ÁÎÄ¼ş
+	// è¯»æ–‡ä»¶
 	ifstream inFile("news.csv", ios::in);
 	string lineStr;
 	vector<vector<string>> strArray;
@@ -38,18 +38,18 @@ void Readcsv()//¶ÁÈ¡"news.csv"
 
 		string str;
 		string str1;
-		// ´òÓ¡ÕûĞĞ×Ö·û´®
+		// æ‰“å°æ•´è¡Œå­—ç¬¦ä¸²
 		//cout << lineStr << endl;
-		// ´æ³É¶şÎ¬±í½á¹¹
+		// å­˜æˆäºŒç»´è¡¨ç»“æ„
 		stringstream ss(lineStr);
 
-		//²âÊÔ¶ÁÈ¡µÄcsvÎÄ¼ş
+		//æµ‹è¯•è¯»å–çš„csvæ–‡ä»¶
 		//cout<<countnum++<<":\n"<<lineStr<<endl<<endl;
 
 		if(3==flag){
             if(lineStr.size()==0){flag=3;}
             if(isHttp(lineStr)){flag=0;}
-            //ÍøÒ³ÄÚÈİĞ´ÈëtxtÎÄ¼ş£¬Î»ÓÚ×ÓÎÄ¼ş¼Ğ1ÏÂ
+            //ç½‘é¡µå†…å®¹å†™å…¥txtæ–‡ä»¶ï¼Œä½äºå­æ–‡ä»¶å¤¹1ä¸‹
             else;
                 //inputsitestory(html,lineStr);
         }
@@ -91,7 +91,7 @@ void Readcsv()//¶ÁÈ¡"news.csv"
 	}
 	Readcsvfinish=clock();
 	ReadcsvTime=(double)(Readcsvfinish-Readcsvstart);
-	cout<<"Ğ´ÈëÍøÒ³ÎÄ¼şµÄÊ±¼äÎª"<<ReadcsvTime<<"ms\n";
+	cout<<"å†™å…¥ç½‘é¡µæ–‡ä»¶çš„æ—¶é—´ä¸º"<<ReadcsvTime<<"ms\n";
 	//inputsite(siteArray);
 	//inputtitle(titleArray);
 
@@ -135,7 +135,7 @@ void debugtest_read(){
     cout<<"titlesize:"<<titleArray.size()<<endl;
 }
 
-//µ¥´ÊÁĞ±í·ÅÔÚinputÖĞ£¬¶ÁÖ¸¶¨idµÄÎÄ¼ş£¬id´Ó0¿ªÊ¼
+//å•è¯åˆ—è¡¨æ”¾åœ¨inputä¸­ï¼Œè¯»æŒ‡å®šidçš„æ–‡ä»¶ï¼Œidä»0å¼€å§‹
 int readsitestory_state(long long int id,vector<string> &input){
 
 if(id<0)return -1;
@@ -387,14 +387,14 @@ void debugtext_analyseHtml(){
 cout<<endl;
 }
 
-bool is_Char(char c) //ÅĞ¶Ï×Ö·û
+bool is_Char(char c) //åˆ¤æ–­å­—ç¬¦
 {
 	if((c>='A' && c<='Z') || (c>='a' && c<='z'))return true;
 	else
 		return false;
 }
 
-bool is_Dig(char c) //ÅĞ¶ÏÊı×Ö
+bool is_Dig(char c) //åˆ¤æ–­æ•°å­—
 {
 	if(c>='0' && c<='9')return true;
 	else

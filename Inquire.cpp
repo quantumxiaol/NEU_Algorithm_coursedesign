@@ -10,11 +10,11 @@
 #include "shellapi.h "
 using namespace std;
 void maxHeapify(std::vector<pair<string,int>> &input, int start, int end) {
-    // Çó³ö×óÓÒ×Ó½áµãÏÂ±ê
+    // æ±‚å‡ºå·¦å³å­ç»“ç‚¹ä¸‹æ ‡
     int left=2*start+1;
     int right=left+1;
 
-    // Çó³ö{vi[start], vi[left], vi[right]}ÈıÕßÖĞµÄ×î´óÖµÏÂ±ê
+    // æ±‚å‡º{vi[start], vi[left], vi[right]}ä¸‰è€…ä¸­çš„æœ€å¤§å€¼ä¸‹æ ‡
     int maxIndex=start;
     if (left<=end&&input[left].first>input[maxIndex].first) {
         maxIndex=left;
@@ -23,7 +23,7 @@ void maxHeapify(std::vector<pair<string,int>> &input, int start, int end) {
         maxIndex=right;
     }
 
-    // Èç¹û¸ù½áµã²»ÊÇ×î´óµÄ, ½»»»¸¸×Ó½áµãºóÔò¼ÌĞøµİ¹éµ÷ÕûÏÂÒ»²ã
+    // å¦‚æœæ ¹ç»“ç‚¹ä¸æ˜¯æœ€å¤§çš„, äº¤æ¢çˆ¶å­ç»“ç‚¹ååˆ™ç»§ç»­é€’å½’è°ƒæ•´ä¸‹ä¸€å±‚
     if (maxIndex!=start) {
         {
 
@@ -34,12 +34,12 @@ void maxHeapify(std::vector<pair<string,int>> &input, int start, int end) {
 
 int rantwordlist(vector<pair<string,int>> &input)
 {
-    // ³õÊ¼»¯½¨¶Ñ: ´Ó×îºóÒ»¸öÒ¶×Ó½áµã¿ªÊ¼, ´ÓÓÒµ½×ó´ÓÏÂµ½ÉÏµ÷Õû¶ş²æÊ÷³É´ó¸ù¶Ñ
+    // åˆå§‹åŒ–å»ºå †: ä»æœ€åä¸€ä¸ªå¶å­ç»“ç‚¹å¼€å§‹, ä»å³åˆ°å·¦ä»ä¸‹åˆ°ä¸Šè°ƒæ•´äºŒå‰æ ‘æˆå¤§æ ¹å †
     for (int i=input.size()/2-1;i>=0;--i) {
         maxHeapify(input,i,input.size()-1);
     }
 
-    // ¶ÑÅÅĞò: ½»»»Ê×Î²ÔªËØºóµ÷Õû¸ù½ÚµãÊ¹Æä·ûºÏ´ó¸ù¶ÑÌØĞÔ
+    // å †æ’åº: äº¤æ¢é¦–å°¾å…ƒç´ åè°ƒæ•´æ ¹èŠ‚ç‚¹ä½¿å…¶ç¬¦åˆå¤§æ ¹å †ç‰¹æ€§
     for (int i=input.size()-1;i>=1;--i) {
        std::swap(input[0],input[i]);
 
@@ -58,8 +58,8 @@ int find_number(vector<string> searchkey,vector<int>&answer)
      int right=sz-1;
      while(left<=right)
          {
-             mid=(left+right)/2;//¼ÆËãÖĞ¼äÔªËØµÄÏÂ±ê
-	//ÅĞ¶ÏmidºÍ¿´´óĞ¡£¬ÖØĞÂ¾«È·kËùÔÚ·¶Î§
+             mid=(left+right)/2;//è®¡ç®—ä¸­é—´å…ƒç´ çš„ä¸‹æ ‡
+	//åˆ¤æ–­midå’Œçœ‹å¤§å°ï¼Œé‡æ–°ç²¾ç¡®kæ‰€åœ¨èŒƒå›´
 		if (input[mid].first<searchkey[i])
 		{
 			left=mid+1;
@@ -84,10 +84,10 @@ int find_number(vector<string> searchkey,vector<int>&answer)
      }
 
 void maxHeapify_web(std::vector<pair<int,int>> &input, int start, int end) {
-    // Çó³ö×óÓÒ×Ó½áµãÏÂ±ê
+    // æ±‚å‡ºå·¦å³å­ç»“ç‚¹ä¸‹æ ‡
     int left=2*start+1;
     int right=left+1;
-    // Çó³ö{vi[start], vi[left], vi[right]}ÈıÕßÖĞµÄ×î´óÖµÏÂ±ê
+    // æ±‚å‡º{vi[start], vi[left], vi[right]}ä¸‰è€…ä¸­çš„æœ€å¤§å€¼ä¸‹æ ‡
     int maxIndex=start;
 
     if (left<=end&&input[left].first>input[maxIndex].first) {
@@ -97,7 +97,7 @@ void maxHeapify_web(std::vector<pair<int,int>> &input, int start, int end) {
         maxIndex=right;
     }
 
-    // Èç¹û¸ù½áµã²»ÊÇ×î´óµÄ, ½»»»¸¸×Ó½áµãºóÔò¼ÌĞøµİ¹éµ÷ÕûÏÂÒ»²ã
+    // å¦‚æœæ ¹ç»“ç‚¹ä¸æ˜¯æœ€å¤§çš„, äº¤æ¢çˆ¶å­ç»“ç‚¹ååˆ™ç»§ç»­é€’å½’è°ƒæ•´ä¸‹ä¸€å±‚
     if (maxIndex!=start) {
         {
         std::swap(input[maxIndex], input[start]);}
@@ -105,13 +105,13 @@ void maxHeapify_web(std::vector<pair<int,int>> &input, int start, int end) {
     }
 }
 
-void maxHeapify_webfre(std::vector<pair<pair<int/*´ÎÊı*/,int/*ÆµÊı*/>,int>> &input, int start, int end) {
-    // Çó³ö×óÓÒ×Ó½áµãÏÂ±ê
+void maxHeapify_webfre(std::vector<pair<pair<int/*æ¬¡æ•°*/,int/*é¢‘æ•°*/>,int>> &input, int start, int end) {
+    // æ±‚å‡ºå·¦å³å­ç»“ç‚¹ä¸‹æ ‡
 
     int left=2*start+1;
     int right=left+1;
 
-    // Çó³ö{vi[start], vi[left], vi[right]}ÈıÕßÖĞµÄ×î´óÖµÏÂ±ê
+    // æ±‚å‡º{vi[start], vi[left], vi[right]}ä¸‰è€…ä¸­çš„æœ€å¤§å€¼ä¸‹æ ‡
     int maxIndex=start;
 
     if (left<=end&&input[left].first.first>input[maxIndex].first.first) {
@@ -130,7 +130,7 @@ void maxHeapify_webfre(std::vector<pair<pair<int/*´ÎÊı*/,int/*ÆµÊı*/>,int>> &inp
         if(input[right].first.second>input[maxIndex].first.second)
              maxIndex=right;
     }
-    // Èç¹û¸ù½áµã²»ÊÇ×î´óµÄ, ½»»»¸¸×Ó½áµãºóÔò¼ÌĞøµİ¹éµ÷ÕûÏÂÒ»²ã
+    // å¦‚æœæ ¹ç»“ç‚¹ä¸æ˜¯æœ€å¤§çš„, äº¤æ¢çˆ¶å­ç»“ç‚¹ååˆ™ç»§ç»­é€’å½’è°ƒæ•´ä¸‹ä¸€å±‚
     if (maxIndex!=start) {
         {
         std::swap(input[maxIndex], input[start]);}
@@ -140,12 +140,12 @@ void maxHeapify_webfre(std::vector<pair<pair<int/*´ÎÊı*/,int/*ÆµÊı*/>,int>> &inp
 
 int rantwordlist_web(vector<pair<int,int>> &input)
 {
-    // ³õÊ¼»¯½¨¶Ñ: ´Ó×îºóÒ»¸öÒ¶×Ó½áµã¿ªÊ¼, ´ÓÓÒµ½×ó´ÓÏÂµ½ÉÏµ÷Õû¶ş²æÊ÷³É´ó¸ù¶Ñ
+    // åˆå§‹åŒ–å»ºå †: ä»æœ€åä¸€ä¸ªå¶å­ç»“ç‚¹å¼€å§‹, ä»å³åˆ°å·¦ä»ä¸‹åˆ°ä¸Šè°ƒæ•´äºŒå‰æ ‘æˆå¤§æ ¹å †
     for (int i=input.size()/2 -1;i>=0;--i) {
         maxHeapify_web(input,i,input.size()-1);
     }
 
-    // ¶ÑÅÅĞò: ½»»»Ê×Î²ÔªËØºóµ÷Õû¸ù½ÚµãÊ¹Æä·ûºÏ´ó¸ù¶ÑÌØĞÔ
+    // å †æ’åº: äº¤æ¢é¦–å°¾å…ƒç´ åè°ƒæ•´æ ¹èŠ‚ç‚¹ä½¿å…¶ç¬¦åˆå¤§æ ¹å †ç‰¹æ€§
     for (int i=input.size()-1;i>=1;--i) {
        std::swap(input[0],input[i]);
 
@@ -153,14 +153,14 @@ int rantwordlist_web(vector<pair<int,int>> &input)
     }
 }
 
-int rantwordlist_webfre( vector<pair<pair<int/*´ÎÊı*/,int/*ÆµÊı*/>,int>>&input)
+int rantwordlist_webfre( vector<pair<pair<int/*æ¬¡æ•°*/,int/*é¢‘æ•°*/>,int>>&input)
 {
-    // ³õÊ¼»¯½¨¶Ñ: ´Ó×îºóÒ»¸öÒ¶×Ó½áµã¿ªÊ¼, ´ÓÓÒµ½×ó´ÓÏÂµ½ÉÏµ÷Õû¶ş²æÊ÷³É´ó¸ù¶Ñ
+    // åˆå§‹åŒ–å»ºå †: ä»æœ€åä¸€ä¸ªå¶å­ç»“ç‚¹å¼€å§‹, ä»å³åˆ°å·¦ä»ä¸‹åˆ°ä¸Šè°ƒæ•´äºŒå‰æ ‘æˆå¤§æ ¹å †
     for (int i=input.size()/2 -1;i>=0;--i) {
         maxHeapify_webfre(input,i,input.size()-1);
     }
 
-    // ¶ÑÅÅĞò: ½»»»Ê×Î²ÔªËØºóµ÷Õû¸ù½ÚµãÊ¹Æä·ûºÏ´ó¸ù¶ÑÌØĞÔ
+    // å †æ’åº: äº¤æ¢é¦–å°¾å…ƒç´ åè°ƒæ•´æ ¹èŠ‚ç‚¹ä½¿å…¶ç¬¦åˆå¤§æ ¹å †ç‰¹æ€§
     for (int i=input.size()-1;i>=1;--i) {
        std::swap(input[0],input[i]);
 
@@ -171,16 +171,16 @@ int rantwordlist_webfre( vector<pair<pair<int/*´ÎÊı*/,int/*ÆµÊı*/>,int>>&input)
 
 int InquireKeywordFre(vector<string> keywordlist,vector<int> &htmlidfre){
 int web[2][10000];
-vector<pair<pair<int/*´ÎÊı*/,int/*ÆµÊı*/>,int>>webb;
+vector<pair<pair<int/*æ¬¡æ•°*/,int/*é¢‘æ•°*/>,int>>webb;
 
-//³õÊ¼»¯
+//åˆå§‹åŒ–
 for(int v=0;v<2;v++)
     for(int w=0;w<10000;w++)
         web[v][w]=0;
 
 vector<int> answer;
 
-vector<pair<int,vector<pair<int/*±àºÅ*/,int/*ÆµÊı*/>>>> inputfre;
+vector<pair<int,vector<pair<int/*ç¼–å·*/,int/*é¢‘æ•°*/>>>> inputfre;
 
 readindexfrequency(inputfre);
 
@@ -311,12 +311,12 @@ return 0;
 int runserachWangFre(){
     int web[2][10000];
 
-    vector<pair<pair<int/*´ÎÊı*/,int/*ÆµÊı*/>,int>>webb;
+    vector<pair<pair<int/*æ¬¡æ•°*/,int/*é¢‘æ•°*/>,int>>webb;
    for(int v=0;v<2;v++)
     for(int w=0;w<10000;w++)
         web[v][w]=0;
 vector<int> answer;
-vector<pair<int,vector<pair<int/*±àºÅ*/,int/*ÆµÊı*/>>>> input4;
+vector<pair<int,vector<pair<int/*ç¼–å·*/,int/*é¢‘æ•°*/>>>> input4;
 //vector<pair<int,vector<int>>> input3;
 vector<string> keywordlist;
 cout<<"********************Welcome to Search********************"<<endl;

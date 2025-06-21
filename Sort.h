@@ -7,7 +7,7 @@ struct ExNode{
    std::pair<int,int> key;
 };
 typedef ExNode External[6];
-typedef int LoserTree[5];//表示非终端结点，由于是完全二叉树，所以可以使用一维数组来表示
+typedef int LoserTree[5];//琛ㄧず闈炵粓绔粨鐐癸紝鐢变簬鏄畬鍏ㄤ簩鍙夋爲锛屾墍浠ュ彲浠ヤ娇鐢ㄤ竴缁存暟缁勬潵琛ㄧず
 
 /*
 bool cmpExNodeG(ExNode a,ExNode b){
